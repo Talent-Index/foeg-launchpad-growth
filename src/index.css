@@ -40,6 +40,7 @@ All colors MUST be HSL.
     
     --foeg-purple: 263 100% 65%;
     --foeg-blue: 217 91% 60%;
+    --foeg-gold: 43 90% 61%;
     --foeg-onyx: 240 15% 5%;
     
     --gradient-primary: linear-gradient(135deg, hsl(263 100% 65%) 0%, hsl(217 91% 60%) 100%);

@@ -1,14 +1,14 @@
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
-import SocialProof from "@/components/SocialProof";
+import ThreePillars from "@/components/ThreePillars";
+import StatsByNumbers from "@/components/StatsByNumbers";
+import PartnerEcosystem from "@/components/PartnerEcosystem";
 import Programs from "@/components/Programs";
 import GirlsOnchain from "@/components/GirlsOnchain";
-import HowItWorks from "@/components/HowItWorks";
-import FounderSpotlight from "@/components/FounderSpotlight";
+import MeetTheTeam from "@/components/MeetTheTeam";
 import Events from "@/components/Events";
-import KnowledgeSessions from "@/components/KnowledgeSessions";
 import Testimonials from "@/components/Testimonials";
-import ApplicationForm from "@/components/ApplicationForm";
+import PartnerCTA from "@/components/PartnerCTA";
 import Newsletter from "@/components/Newsletter";
 import Footer from "@/components/Footer";
 
@@ -17,15 +17,15 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <Navigation />
       <Hero />
-      <SocialProof />
+      <ThreePillars />
+      <StatsByNumbers />
+      <PartnerEcosystem />
       <Programs />
       <GirlsOnchain />
-      <HowItWorks />
-      <FounderSpotlight />
+      <MeetTheTeam />
       <Events />
-      <KnowledgeSessions />
       <Testimonials />
-      <ApplicationForm />
+      <PartnerCTA />
       <Newsletter />
       <Footer />
     </div>

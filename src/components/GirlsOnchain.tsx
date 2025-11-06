@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Users, Heart, Sparkles } from "lucide-react";
-import girlsOnchain from "@/assets/girls-onchain.jpeg";
+import girlsOnchainWelcome from "@/assets/girls-onchain-welcome.jpeg";
 
 const GirlsOnchain = () => {
   return (
@@ -46,8 +46,8 @@ const GirlsOnchain = () => {
           <div className="relative">
             <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-3xl blur-3xl" />
             <img
-              src={girlsOnchain}
-              alt="Girls Onchain community event with women in Web3"
+              src={girlsOnchainWelcome}
+              alt="Welcome to Girls Onchain - Unlocking women's potential in the on-chain era"
               className="relative rounded-3xl shadow-2xl w-full h-[500px] object-cover"
               loading="lazy"
             />

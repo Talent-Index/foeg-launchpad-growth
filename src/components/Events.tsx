@@ -2,40 +2,43 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Calendar, MapPin, Users } from "lucide-react";
-import workshopTable from "@/assets/workshop-table.jpeg";
+import dojoGameJam from "@/assets/dojo-game-jam.jpeg";
+import workshopSession from "@/assets/workshop-session.jpeg";
+import miniHackSession from "@/assets/mini-hack-session.jpeg";
+import hackathonWinner from "@/assets/hackathon-winner.png";
 
 const Events = () => {
   const upcomingEvents = [
     {
-      image: workshopTable,
-      title: "Web3 Gaming Workshop",
+      image: dojoGameJam,
+      title: "Dojo Game Jam VII",
       date: "Dec 15, 2025",
-      location: "Virtual",
-      attendees: "50+",
-      tags: ["Gaming", "Workshop"],
+      location: "Nairobi, Kenya",
+      attendees: "60+",
+      tags: ["Gaming", "Hackathon"],
     },
     {
-      image: workshopTable,
-      title: "DeFi Protocol Hackathon",
+      image: miniHackSession,
+      title: "Nairobi Mini Hack: Prototyping the Future",
       date: "Jan 10-12, 2026",
-      location: "San Francisco",
-      attendees: "200+",
-      tags: ["Fintech", "Hackathon"],
+      location: "Nairobi, Kenya",
+      attendees: "40+",
+      tags: ["Workshop", "Mini Hack"],
     },
     {
-      image: workshopTable,
-      title: "Legal & Compliance Masterclass",
+      image: workshopSession,
+      title: "Women Connect: Team1 Kenya",
       date: "Jan 25, 2026",
-      location: "Virtual",
-      attendees: "30+",
-      tags: ["Legal", "Training"],
+      location: "Nairobi, Kenya",
+      attendees: "50+",
+      tags: ["Girls Onchain", "Networking"],
     },
   ];
 
   const pastEvents = [
-    { title: "Infrastructure Security Summit", attendees: "150+", date: "Nov 2025" },
-    { title: "Health Tech Innovation Day", attendees: "100+", date: "Oct 2025" },
-    { title: "Web3 Founders Meetup", attendees: "80+", date: "Sep 2025" },
+    { title: "Chennai Avalanche Hackathon - 1st Place Winner", attendees: "100+", date: "Nov 2025", image: hackathonWinner },
+    { title: "Girls Onchain Nairobi Launch", attendees: "80+", date: "Oct 2025" },
+    { title: "Web3 Legal Compliance Workshop", attendees: "45+", date: "Sep 2025" },
   ];
 
   return (

@@ -50,6 +50,7 @@ export default {
         foeg: {
           purple: "hsl(var(--foeg-purple))",
           blue: "hsl(var(--foeg-blue))",
+          gold: "hsl(var(--foeg-gold))",
           onyx: "hsl(var(--foeg-onyx))",
         },
         sidebar: {

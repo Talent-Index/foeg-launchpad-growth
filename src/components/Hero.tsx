@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Rocket, Target, TrendingUp } from "lucide-react";
-import heroCommunity from "@/assets/hero-community.jpeg";
+import dojoGameJam from "@/assets/dojo-game-jam.jpeg";
 
 const Hero = () => {
   const stats = [
@@ -24,8 +24,8 @@ const Hero = () => {
       {/* Hero Image with Parallax Effect */}
       <div className="absolute inset-0 opacity-20">
         <img
-          src={heroCommunity}
-          alt="FOEG Labs community of startup founders"
+          src={dojoGameJam}
+          alt="Dojo Game Jam VII in partnership with FOEG Labs - Community of founders and developers"
           className="w-full h-full object-cover"
           loading="eager"
         />
