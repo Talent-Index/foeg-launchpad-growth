@@ -16,6 +16,7 @@ const Events = () => {
       location: "Nairobi, Kenya",
       attendees: "60+",
       tags: ["Gaming", "Hackathon"],
+      link: "https://luma.com/calendar/cal-MWdjQCvupN43Yqy"
     },
     {
       image: miniHackSession,
@@ -24,6 +25,7 @@ const Events = () => {
       location: "Nairobi, Kenya",
       attendees: "40+",
       tags: ["Workshop", "Mini Hack"],
+      link: "https://luma.com/calendar/cal-MWdjQCvupN43Yqy"
     },
     {
       image: workshopSession,
@@ -32,6 +34,7 @@ const Events = () => {
       location: "Nairobi, Kenya",
       attendees: "50+",
       tags: ["Girls Onchain", "Networking"],
+      link: "https://luma.com/calendar/cal-MWdjQCvupN43Yqy"
     },
   ];
 
@@ -94,7 +97,10 @@ const Events = () => {
                     </div>
                   </div>
 
-                  <Button className="w-full" variant="outline">
+                  <Button 
+                    className="w-full bg-accent text-accent-foreground hover:bg-accent/90 font-semibold" 
+                    onClick={() => window.open(event.link, "_blank")}
+                  >
                     Register Now
                   </Button>
                 </div>

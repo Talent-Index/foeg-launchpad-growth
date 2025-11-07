@@ -14,15 +14,15 @@ const Hero = () => {
   };
 
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-      {/* Gradient Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-foeg-onyx via-foeg-onyx to-background">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(138,79,255,0.15),transparent_50%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(59,130,246,0.15),transparent_50%)]" />
+    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 grain">
+      {/* SheFi-inspired gradient background */}
+      <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, hsl(328 86% 85%) 0%, hsl(300 76% 85%) 50%, hsl(328 86% 92%) 100%)' }}>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,20,147,0.2),transparent_60%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(186,85,211,0.15),transparent_60%)]" />
       </div>
 
       {/* Hero Image with Parallax Effect */}
-      <div className="absolute inset-0 opacity-20">
+      <div className="absolute inset-0 opacity-10">
         <img
           src={dojoGameJam}
           alt="Dojo Game Jam VII in partnership with FOEG Labs - Community of founders and developers"
@@ -44,12 +44,21 @@ const Hero = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button size="lg" onClick={() => scrollToSection("apply")} className="text-base group">
+            <Button 
+              size="lg" 
+              onClick={() => scrollToSection("apply")} 
+              className="text-base group bg-accent text-accent-foreground hover:bg-accent/90 font-semibold"
+            >
               Apply to Residency
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </Button>
-            <Button size="lg" variant="outline" onClick={() => scrollToSection("programs")} className="text-base">
-              Explore Programs
+            <Button 
+              size="lg" 
+              onClick={() => window.open("https://chat.whatsapp.com/FphprlAP6S6LqrwOIc1nXz?mode=wwt", "_blank")}
+              variant="outline" 
+              className="text-base border-2 border-foreground hover:bg-foreground hover:text-background font-semibold"
+            >
+              Join Our Community
             </Button>
           </div>
 
@@ -58,11 +67,11 @@ const Hero = () => {
             {stats.map((stat, index) => (
               <div
                 key={index}
-                className="glass rounded-2xl p-6 hover:shadow-[var(--shadow-hover)] transition-all duration-300 hover:scale-105"
+                className="glass rounded-2xl p-6 hover:shadow-lg transition-all duration-300 hover:scale-[1.02] bg-white/80"
               >
-                <stat.icon className={`h-8 w-8 ${stat.color} mx-auto mb-3`} />
-                <div className="text-3xl font-display font-bold mb-1">{stat.value}</div>
-                <div className="text-sm text-muted-foreground">{stat.label}</div>
+                <stat.icon className="h-8 w-8 text-primary mx-auto mb-3" />
+                <div className="text-3xl font-display font-bold mb-1 text-foreground">{stat.value}</div>
+                <div className="text-sm text-foreground/70">{stat.label}</div>
               </div>
             ))}
           </div>

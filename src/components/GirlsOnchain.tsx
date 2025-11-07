@@ -4,21 +4,21 @@ import girlsOnchainWelcome from "@/assets/girls-onchain-welcome.jpeg";
 
 const GirlsOnchain = () => {
   return (
-    <section className="py-24 bg-gradient-to-br from-primary/10 to-secondary/10">
+    <section className="py-24 bg-gradient-to-br from-primary/5 to-accent/5">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
           <div className="space-y-6">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20">
               <Heart className="h-4 w-4 text-primary" />
-              <span className="text-sm font-semibold">Girls Onchain Initiative</span>
+              <span className="text-sm font-semibold text-foreground">Girls Onchain Initiative</span>
             </div>
 
-            <h2 className="text-4xl md:text-5xl font-display font-bold">
-              Empowering Women in <span className="gradient-text">Web3</span>
+            <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground">
+              Empowering Women in <span className="italic text-primary">Web3</span>
             </h2>
 
-            <p className="text-lg text-muted-foreground">
-              Join a vibrant community of female founders, developers, and leaders shaping the future of blockchain technology. Get exclusive access to mentorship, resources, and networking opportunities.
+            <p className="text-lg text-foreground/70">
+              Karibu—You're welcome here. Join a vibrant community of female founders, developers, and leaders shaping the future of blockchain technology. Get exclusive access to mentorship, resources, and networking opportunities.
             </p>
 
             <div className="space-y-4">
@@ -38,7 +38,11 @@ const GirlsOnchain = () => {
               </div>
             </div>
 
-            <Button size="lg" className="mt-6">
+            <Button 
+              size="lg" 
+              className="mt-6 bg-accent text-accent-foreground hover:bg-accent/90 font-semibold"
+              onClick={() => window.open("https://chat.whatsapp.com/FphprlAP6S6LqrwOIc1nXz?mode=wwt", "_blank")}
+            >
               Join Girls Onchain
             </Button>
           </div>

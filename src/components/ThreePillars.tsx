@@ -24,9 +24,9 @@ const ThreePillars = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 space-y-4">
           <h2 className="text-4xl md:text-5xl font-display font-bold">
-            Designed to make <span className="gradient-text">growth accessible</span>
+            Designed to make <span className="italic text-primary">growth accessible</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-xl text-foreground/70 max-w-3xl mx-auto">
             FOEG Labs provides everything early-stage founders need to accelerate from idea to funded startup
           </p>
         </div>
@@ -35,13 +35,13 @@ const ThreePillars = () => {
           {pillars.map((pillar, index) => (
             <div
               key={index}
-              className="glass rounded-2xl p-8 hover:shadow-[var(--shadow-hover)] transition-all duration-300 hover:scale-[1.02] text-center"
+              className="glass rounded-3xl p-8 hover:shadow-lg transition-all duration-300 hover:scale-[1.02] text-center bg-white"
             >
-              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center mx-auto mb-6">
+              <div className="w-16 h-16 rounded-2xl bg-primary flex items-center justify-center mx-auto mb-6">
                 <pillar.icon className="h-8 w-8 text-white" />
               </div>
-              <h3 className="text-2xl font-display font-bold mb-3">{pillar.title}</h3>
-              <p className="text-muted-foreground leading-relaxed">{pillar.description}</p>
+              <h3 className="text-2xl font-display font-bold mb-3 text-foreground">{pillar.title}</h3>
+              <p className="text-foreground/70 leading-relaxed">{pillar.description}</p>
             </div>
           ))}
         </div>

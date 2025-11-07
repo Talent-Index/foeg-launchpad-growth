@@ -48,9 +48,10 @@ export default {
           foreground: "hsl(var(--card-foreground))",
         },
         foeg: {
-          purple: "hsl(var(--foeg-purple))",
-          blue: "hsl(var(--foeg-blue))",
-          gold: "hsl(var(--foeg-gold))",
+          magenta: "hsl(var(--foeg-magenta))",
+          orange: "hsl(var(--foeg-orange))",
+          lime: "hsl(var(--foeg-lime))",
+          indigo: "hsl(var(--foeg-indigo))",
           onyx: "hsl(var(--foeg-onyx))",
         },
         sidebar: {
