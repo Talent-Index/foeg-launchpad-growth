@@ -2,11 +2,11 @@ import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
 import ThreePillars from "@/components/ThreePillars";
 import StatsByNumbers from "@/components/StatsByNumbers";
-import PartnerEcosystem from "@/components/PartnerEcosystem";
 import Programs from "@/components/Programs";
 import GirlsOnchain from "@/components/GirlsOnchain";
-import MeetTheTeam from "@/components/MeetTheTeam";
+import PhotoGallery from "@/components/PhotoGallery";
 import Events from "@/components/Events";
+import PartnerEcosystem from "@/components/PartnerEcosystem";
 import Testimonials from "@/components/Testimonials";
 import PartnerCTA from "@/components/PartnerCTA";
 import Newsletter from "@/components/Newsletter";
@@ -19,11 +19,11 @@ const Index = () => {
       <Hero />
       <ThreePillars />
       <StatsByNumbers />
-      <PartnerEcosystem />
       <Programs />
       <GirlsOnchain />
-      <MeetTheTeam />
+      <PhotoGallery />
       <Events />
+      <PartnerEcosystem />
       <Testimonials />
       <PartnerCTA />
       <Newsletter />

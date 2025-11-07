@@ -3,9 +3,9 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Calendar, MapPin, Users } from "lucide-react";
 import dojoGameJam from "@/assets/dojo-game-jam.jpeg";
-import workshopSession from "@/assets/workshop-session.jpeg";
+import miniHackWomen from "@/assets/mini-hack-women.jpeg";
 import miniHackSession from "@/assets/mini-hack-session.jpeg";
-import hackathonWinner from "@/assets/hackathon-winner.png";
+import womenConnectTeam from "@/assets/women-connect-team1.jpeg";
 
 const Events = () => {
   const upcomingEvents = [
@@ -19,7 +19,7 @@ const Events = () => {
       link: "https://luma.com/calendar/cal-MWdjQCvupN43Yqy"
     },
     {
-      image: miniHackSession,
+      image: miniHackWomen,
       title: "Nairobi Mini Hack: Prototyping the Future",
       date: "Jan 10-12, 2026",
       location: "Nairobi, Kenya",
@@ -28,7 +28,7 @@ const Events = () => {
       link: "https://luma.com/calendar/cal-MWdjQCvupN43Yqy"
     },
     {
-      image: workshopSession,
+      image: womenConnectTeam,
       title: "Women Connect: Team1 Kenya",
       date: "Jan 25, 2026",
       location: "Nairobi, Kenya",
@@ -39,7 +39,7 @@ const Events = () => {
   ];
 
   const pastEvents = [
-    { title: "Chennai Avalanche Hackathon - 1st Place Winner", attendees: "100+", date: "Nov 2025", image: hackathonWinner },
+    { title: "Chennai Avalanche Hackathon - 1st Place Winner", attendees: "100+", date: "Nov 2025" },
     { title: "Girls Onchain Nairobi Launch", attendees: "80+", date: "Oct 2025" },
     { title: "Web3 Legal Compliance Workshop", attendees: "45+", date: "Sep 2025" },
   ];
