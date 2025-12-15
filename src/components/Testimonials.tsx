@@ -7,19 +7,19 @@ const Testimonials = () => {
       quote: "FOEG Labs connected me with the right investors at exactly the right time. The mentorship was invaluable, and I went from hackathon project to funded startup in 6 months.",
       author: "Alex Thompson",
       role: "Founder, ChainVerse",
-      image: "AT",
+      initials: "AT",
     },
     {
       quote: "The Girls Onchain initiative gave me the confidence and network I needed to launch my Web3 company. The community support here is incredible.",
       author: "Maya Singh",
       role: "CEO, DecentralHealth",
-      image: "MS",
+      initials: "MS",
     },
     {
       quote: "From legal compliance to technical architecture, FOEG Labs provided expert guidance every step of the way. They truly understand the challenges founders face.",
       author: "Jordan Lee",
       role: "Co-founder, GameFi Protocol",
-      image: "JL",
+      initials: "JL",
     },
   ];
 
@@ -33,22 +33,27 @@ const Testimonials = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        {/* Responsive grid: 1 col mobile, 2 col tablet, 3 col desktop */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {testimonials.map((testimonial, index) => (
             <Card
               key={index}
-              className="p-8 glass border-border hover:shadow-[var(--shadow-hover)] transition-all duration-300 hover:scale-105"
+              className="flex flex-col h-full p-8 bg-background border-border hover:shadow-lg transition-all duration-300"
             >
-              <Quote className="h-10 w-10 text-primary mb-4 opacity-50" />
-              <p className="text-lg mb-6 leading-relaxed">{testimonial.quote}</p>
+              <Quote className="h-10 w-10 text-primary mb-4 opacity-50 flex-shrink-0" />
               
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-semibold">
-                  {testimonial.image}
+              {/* Quote text - flex-grow to push author to bottom */}
+              <p className="text-lg mb-6 leading-relaxed flex-grow">{testimonial.quote}</p>
+              
+              {/* Author info - always at bottom */}
+              <div className="flex items-center gap-4 pt-4 border-t border-border/50">
+                {/* Fixed size avatar */}
+                <div className="w-12 h-12 flex-shrink-0 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-primary-foreground font-semibold text-sm">
+                  {testimonial.initials}
                 </div>
-                <div>
-                  <div className="font-semibold">{testimonial.author}</div>
-                  <div className="text-sm text-muted-foreground">{testimonial.role}</div>
+                <div className="min-w-0">
+                  <div className="font-semibold text-foreground truncate">{testimonial.author}</div>
+                  <div className="text-sm text-muted-foreground truncate">{testimonial.role}</div>
                 </div>
               </div>
             </Card>
