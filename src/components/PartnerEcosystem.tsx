@@ -1,7 +1,32 @@
+import buidlguidlLogo from "@/assets/partners/buidlguidl.svg";
+
 const PartnerEcosystem = () => {
   const partners = [
-    "Avalanche", "Team1 Kenya", "Beyond the Code", "Lido Nation", "Intersect",
-    "Lovelaces", "Blockchain Centre Kenya", "Women Connect", "DOJO",
+    {
+      name: "BuidlGuidl",
+      logo: buidlguidlLogo,
+      url: "https://buidlguidl.com/",
+    },
+    {
+      name: "Cartridge",
+      logo: null, // Text fallback
+      url: "https://cartridge.gg/",
+    },
+    {
+      name: "Avalanche",
+      logo: null, // Text fallback
+      url: "https://www.avax.network/",
+    },
+    {
+      name: "Team1",
+      logo: null, // Text fallback
+      url: "https://www.team1.network/",
+    },
+    {
+      name: "CloudPlexo",
+      logo: null, // Text fallback
+      url: "https://www.cloudplexo.com/",
+    },
   ];
 
   return (
@@ -14,16 +39,35 @@ const PartnerEcosystem = () => {
           </p>
         </div>
 
-        <div className="relative overflow-hidden">
-          <div className="flex animate-marquee gap-12">
-            {[...partners, ...partners].map((partner, index) => (
-              <div
-                key={index}
-                className="flex-shrink-0 glass rounded-xl px-8 py-6 min-w-[200px] flex items-center justify-center"
-              >
-                <span className="text-lg font-semibold text-muted-foreground">{partner}</span>
-              </div>
-            ))}
+        <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12 max-w-5xl mx-auto">
+          {partners.map((partner, index) => (
+            <a
+              key={index}
+              href={partner.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-center justify-center h-16 px-6 py-4 rounded-xl bg-background border border-border/50 hover:border-primary/30 transition-all duration-300 hover:shadow-lg"
+              aria-label={`Visit ${partner.name} website`}
+            >
+              {partner.logo ? (
+                <img
+                  src={partner.logo}
+                  alt={`${partner.name} logo`}
+                  className="h-8 w-auto grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300"
+                />
+              ) : (
+                <span className="text-lg font-semibold text-muted-foreground/60 group-hover:text-foreground transition-colors duration-300">
+                  {partner.name}
+                </span>
+              )}
+            </a>
+          ))}
+          
+          {/* Placeholder for additional partners */}
+          <div className="flex items-center justify-center h-16 px-6 py-4 rounded-xl border-2 border-dashed border-border/50">
+            <span className="text-sm text-muted-foreground/50 text-center">
+              Add confirmed partner<br />logo + link
+            </span>
           </div>
         </div>
       </div>

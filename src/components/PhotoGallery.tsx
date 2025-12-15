@@ -13,15 +13,15 @@ const PhotoGallery = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   const photos = [
-    { src: womenConnectTeam, alt: "Women Connect: Team1 Kenya community gathering at Blockchain Centre", rotation: "rotate-1" },
-    { src: awardsWinners, alt: "Awards ceremony winners celebrating their achievements", rotation: "-rotate-2" },
-    { src: womenConnectDuo, alt: "Women Connect participants showcasing their projects", rotation: "rotate-2" },
-    { src: miniHackSession, alt: "Nairobi Mini Hack: Prototyping the Future - Full venue", rotation: "-rotate-1" },
-    { src: miniHackWomen, alt: "Women builders at Nairobi Mini Hack event", rotation: "rotate-1" },
-    { src: eventVenue, alt: "FOEG Labs event venue with engaged attendees", rotation: "-rotate-2" },
-    { src: eventSession, alt: "Knowledge session in progress with community members", rotation: "rotate-2" },
-    { src: dojoGameJam, alt: "Dojo Game Jam VII in partnership with FOEG Labs", rotation: "-rotate-1" },
-    { src: girlsOnchain, alt: "Girls Onchain initiative participants", rotation: "rotate-1" },
+    { src: womenConnectTeam, alt: "Women Connect: Team1 Kenya community gathering at Blockchain Centre" },
+    { src: awardsWinners, alt: "Awards ceremony winners celebrating their achievements" },
+    { src: womenConnectDuo, alt: "Women Connect participants showcasing their projects" },
+    { src: miniHackSession, alt: "Nairobi Mini Hack: Prototyping the Future - Full venue" },
+    { src: miniHackWomen, alt: "Women builders at Nairobi Mini Hack event" },
+    { src: eventVenue, alt: "FOEG Labs event venue with engaged attendees" },
+    { src: eventSession, alt: "Knowledge session in progress with community members" },
+    { src: dojoGameJam, alt: "Dojo Game Jam VII in partnership with FOEG Labs" },
+    { src: girlsOnchain, alt: "Girls Onchain initiative participants" },
   ];
 
   return (
@@ -35,19 +35,19 @@ const PhotoGallery = () => {
           </p>
         </div>
 
-        {/* Masonry Grid */}
-        <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
+        {/* Strict Responsive Grid - No Masonry */}
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
           {photos.map((photo, index) => (
             <div
               key={index}
-              className={`break-inside-avoid cursor-pointer ${photo.rotation} hover:rotate-0 transition-transform duration-500 hover:scale-105`}
+              className="cursor-pointer group"
               onClick={() => setSelectedImage(photo.src)}
             >
-              <div className="glass rounded-2xl p-4 bg-white shadow-[var(--shadow-glass)] hover:shadow-[var(--shadow-hover)]">
+              <div className="aspect-square overflow-hidden rounded-xl bg-muted shadow-md hover:shadow-xl transition-all duration-300 group-hover:scale-[1.02]">
                 <img
                   src={photo.src}
                   alt={photo.alt}
-                  className="w-full h-auto rounded-lg object-cover"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   loading="lazy"
                 />
               </div>

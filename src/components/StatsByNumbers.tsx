@@ -5,10 +5,14 @@ const StatsByNumbers = () => {
   const sectionRef = useRef<HTMLElement>(null);
 
   const stats = [
-    { value: 300, label: "Founders Supported", suffix: "+" },
-    { value: 25, label: "Grants Matched", suffix: "M+" },
-    { value: 45, label: "Events Hosted", suffix: "+" },
-    { value: 12, label: "Countries Reached", suffix: "+" },
+    { value: 150, label: "Builders Engaged", suffix: "+" },
+    { value: 12, label: "In-Person Sessions Hosted", suffix: "" },
+    { value: 3, label: "Active Community Channels", suffix: "" },
+    { value: 25, label: "Projects Supported", suffix: "+" },
+    { value: 8, label: "Mentors & Reviewers", suffix: "" },
+    { value: 5, label: "Partner Ecosystems", suffix: "" },
+    { value: 2, label: "Cities Reached", suffix: "" },
+    { value: 20, label: "Founder 1:1 Support Calls", suffix: "+" },
   ];
 
   useEffect(() => {
@@ -47,7 +51,7 @@ const StatsByNumbers = () => {
     }, [isVisible, end, duration]);
 
     return (
-      <span className="text-5xl md:text-6xl font-display font-bold gradient-text">
+      <span className="text-4xl md:text-5xl font-display font-bold gradient-text">
         {count}
         {suffix}
       </span>
@@ -64,14 +68,18 @@ const StatsByNumbers = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 max-w-6xl mx-auto">
           {stats.map((stat, index) => (
-            <div key={index} className="text-center space-y-2">
+            <div key={index} className="text-center space-y-2 p-4">
               <Counter end={stat.value} suffix={stat.suffix} />
-              <p className="text-lg text-muted-foreground font-medium">{stat.label}</p>
+              <p className="text-sm md:text-base text-muted-foreground font-medium">{stat.label}</p>
             </div>
           ))}
         </div>
+
+        <p className="text-center text-sm text-muted-foreground/70 mt-12 max-w-xl mx-auto italic">
+          Early-stage estimates based on internal tracking. Metrics will be updated as reporting tightens.
+        </p>
       </div>
     </section>
   );
