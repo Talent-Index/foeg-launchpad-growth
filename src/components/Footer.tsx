@@ -1,56 +1,81 @@
-import { Twitter } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
 
-const TWITTER_URL = "https://twitter.com/FOEG_Labs";
+const WHATSAPP_URL = "https://chat.whatsapp.com/FphprlAP6S6LqrwOIc1nXz";
 
 const Footer = () => {
+  const location = useLocation();
+
   const footerLinks = [
-    { label: "Community", id: "community" },
-    { label: "Programs", id: "who-its-for" },
-    { label: "Contact", href: "mailto:hello@foeglabs.com" },
+    { label: "Home", href: "/" },
+    { label: "Events", href: "/events" },
+    { label: "Partners", href: "/#partners" },
+    { label: "Community", href: WHATSAPP_URL, external: true },
   ];
 
-  const scrollToSection = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+  const handleClick = (href: string) => {
+    if (href.startsWith("/#") && location.pathname === "/") {
+      const id = href.slice(2);
+      document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   return (
     <footer className="py-12 border-t border-border">
       <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-          <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} FOEG Labs
-          </p>
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+          {/* Brand */}
+          <div className="text-center md:text-left">
+            <span className="font-display font-bold text-lg text-foreground">
+              FOEG Labs
+            </span>
+            <p className="text-sm text-muted-foreground mt-1">
+              Frontier of Ecosystem Growth
+            </p>
+          </div>
 
-          <div className="flex items-center gap-6">
+          {/* Links */}
+          <nav className="flex flex-wrap justify-center gap-6">
             {footerLinks.map((link) => (
-              link.href ? (
+              link.external ? (
                 <a
                   key={link.label}
                   href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  {link.label}
+                </a>
+              ) : link.href.startsWith("/#") ? (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  onClick={(e) => {
+                    if (location.pathname === "/") {
+                      e.preventDefault();
+                      handleClick(link.href);
+                    }
+                  }}
                   className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                 >
                   {link.label}
                 </a>
               ) : (
-                <button
+                <Link
                   key={link.label}
-                  onClick={() => scrollToSection(link.id!)}
+                  to={link.href}
                   className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                 >
                   {link.label}
-                </button>
+                </Link>
               )
             ))}
-            <a
-              href={TWITTER_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-foreground transition-colors"
-              aria-label="Twitter"
-            >
-              <Twitter className="h-5 w-5" />
-            </a>
-          </div>
+          </nav>
+
+          {/* Copyright */}
+          <p className="text-sm text-muted-foreground">
+            © {new Date().getFullYear()} FOEG Labs
+          </p>
         </div>
       </div>
     </footer>

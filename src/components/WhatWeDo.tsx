@@ -1,50 +1,61 @@
-import { ArrowRight } from "lucide-react";
+import { Hammer, Users, TrendingUp } from "lucide-react";
 
-const TWITTER_URL = "https://twitter.com/FOEG_Labs";
+const WHATSAPP_URL = "https://chat.whatsapp.com/FphprlAP6S6LqrwOIc1nXz";
 
 const blocks = [
   {
+    icon: Hammer,
     title: "Build",
-    description: "Hands-on programs focused on real skills and real projects.",
+    description: "Hackathons, dev camps, and workshops focused on real skills and real projects. Learn by shipping.",
   },
   {
+    icon: Users,
     title: "Connect",
-    description: "Community-led collaboration across roles and ecosystems.",
+    description: "Community-led collaboration across roles and ecosystems. Find your people, find your partners.",
   },
   {
+    icon: TrendingUp,
     title: "Grow",
-    description: "Long-term support through mentorship, visibility, and partnerships.",
+    description: "Long-term support through mentorship, visibility, and partnerships. From idea to opportunity.",
   },
 ];
 
 const WhatWeDo = () => {
   return (
-    <section id="what-we-do" className="py-24 md:py-32 bg-muted/30">
+    <section id="what-we-do" className="py-24 md:py-32 bg-card">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-display font-bold text-center mb-16 text-foreground">
-          How FOEG Labs works
-        </h2>
+        <div className="max-w-3xl mx-auto text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-4">
+            How FOEG Labs works
+          </h2>
+          <p className="text-muted-foreground text-lg">
+            Three pillars that power everything we do.
+          </p>
+        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+        <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
           {blocks.map((block, index) => (
-            <div
-              key={index}
-              className="space-y-4"
+            <div 
+              key={block.title}
+              className="bg-background rounded-2xl p-8 space-y-4 animate-fade-up"
+              style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <h3 className="text-2xl font-display font-semibold text-foreground">
+              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+                <block.icon className="w-6 h-6 text-primary" />
+              </div>
+              <h3 className="text-xl font-display font-semibold text-foreground">
                 {block.title}
               </h3>
               <p className="text-muted-foreground leading-relaxed">
                 {block.description}
               </p>
-              <a
-                href={TWITTER_URL}
+              <a 
+                href={WHATSAPP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center text-primary hover:text-primary/80 transition-colors text-sm font-medium"
+                className="inline-block text-primary text-sm font-medium hover:underline"
               >
-                Learn more
-                <ArrowRight className="ml-1 h-4 w-4" />
+                Learn more →
               </a>
             </div>
           ))}
