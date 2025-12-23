@@ -1,15 +1,11 @@
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
-import ThreePillars from "@/components/ThreePillars";
-import StatsByNumbers from "@/components/StatsByNumbers";
-import Programs from "@/components/Programs";
-import GirlsOnchain from "@/components/GirlsOnchain";
-import PhotoGallery from "@/components/PhotoGallery";
-import Events from "@/components/Events";
-import PartnerEcosystem from "@/components/PartnerEcosystem";
-import Testimonials from "@/components/Testimonials";
-import PartnerCTA from "@/components/PartnerCTA";
-import Newsletter from "@/components/Newsletter";
+import WhoItsFor from "@/components/WhoItsFor";
+import WhatWeDo from "@/components/WhatWeDo";
+import Community from "@/components/Community";
+import SocialProof from "@/components/SocialProof";
+import Partners from "@/components/Partners";
+import FinalCTA from "@/components/FinalCTA";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -17,16 +13,12 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <Navigation />
       <Hero />
-      <ThreePillars />
-      <StatsByNumbers />
-      <Programs />
-      <GirlsOnchain />
-      <PhotoGallery />
-      <Events />
-      <PartnerEcosystem />
-      <Testimonials />
-      <PartnerCTA />
-      <Newsletter />
+      <WhoItsFor />
+      <WhatWeDo />
+      <Community />
+      <SocialProof />
+      <Partners />
+      <FinalCTA />
       <Footer />
     </div>
   );

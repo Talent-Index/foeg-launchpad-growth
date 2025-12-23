@@ -1,76 +1,56 @@
-import { Twitter, Linkedin, Github, Mail } from "lucide-react";
-import foegLogo from "@/assets/foeg-logo.png";
+import { Twitter } from "lucide-react";
+
+const TWITTER_URL = "https://twitter.com/FOEG_Labs";
 
 const Footer = () => {
-  const footerLinks = {
-    Programs: ["Investor Matchmaking", "Grants Matchmaking", "Consultancy", "Training", "Hackathons"],
-    Community: ["Girls Onchain", "Events", "Knowledge Sessions", "Founder Spotlight", "Partners"],
-    Company: ["About Us", "Careers", "Blog", "Contact", "Press Kit"],
-    Legal: ["Privacy Policy", "Terms of Service", "Code of Conduct", "Cookie Policy"],
-  };
-
-  const socialLinks = [
-    { icon: Twitter, href: "#", label: "Twitter" },
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
-    { icon: Github, href: "#", label: "GitHub" },
-    { icon: Mail, href: "mailto:hello@foeglabs.com", label: "Email" },
+  const footerLinks = [
+    { label: "Community", id: "community" },
+    { label: "Programs", id: "who-its-for" },
+    { label: "Contact", href: "mailto:hello@foeglabs.com" },
   ];
 
+  const scrollToSection = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
-    <footer className="bg-foeg-onyx py-16">
+    <footer className="py-12 border-t border-border">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-12 mb-12">
-          {/* Brand */}
-          <div className="lg:col-span-2">
-            <div className="flex items-center space-x-2 mb-4">
-              <img src={foegLogo} alt="FOEG Labs" className="h-10 w-10 rounded-lg" />
-              <span className="text-xl font-display font-bold gradient-text">FOEG Labs</span>
-            </div>
-            <p className="text-muted-foreground mb-6">
-              Accelerating founders from hackathon to market. Building the future of Web3, one startup at a time.
-            </p>
-            <div className="flex gap-4">
-              {socialLinks.map((social, index) => (
+        <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+          <p className="text-sm text-muted-foreground">
+            © {new Date().getFullYear()} FOEG Labs
+          </p>
+
+          <div className="flex items-center gap-6">
+            {footerLinks.map((link) => (
+              link.href ? (
                 <a
-                  key={index}
-                  href={social.href}
-                  aria-label={social.label}
-                  className="w-10 h-10 rounded-lg glass flex items-center justify-center hover:bg-primary/20 transition-colors"
+                  key={link.label}
+                  href={link.href}
+                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                 >
-                  <social.icon className="h-5 w-5" />
+                  {link.label}
                 </a>
-              ))}
-            </div>
-          </div>
-
-          {/* Links */}
-          {Object.entries(footerLinks).map(([category, links]) => (
-            <div key={category}>
-              <h3 className="font-display font-semibold mb-4">{category}</h3>
-              <ul className="space-y-3">
-                {links.map((link) => (
-                  <li key={link}>
-                    <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                      {link}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-
-        {/* Bottom Bar */}
-        <div className="pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} FOEG Labs. All rights reserved.
-          </p>
-          <p className="text-sm text-muted-foreground">
-            Contact:{" "}
-            <a href="mailto:hello@foeglabs.com" className="text-primary hover:text-secondary transition-colors">
-              hello@foeglabs.com
+              ) : (
+                <button
+                  key={link.label}
+                  onClick={() => scrollToSection(link.id!)}
+                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  {link.label}
+                </button>
+              )
+            ))}
+            <a
+              href={TWITTER_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-muted-foreground hover:text-foreground transition-colors"
+              aria-label="Twitter"
+            >
+              <Twitter className="h-5 w-5" />
             </a>
-          </p>
+          </div>
         </div>
       </div>
     </footer>
